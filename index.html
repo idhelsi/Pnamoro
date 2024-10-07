@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namora comigo?</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,400,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-principal: #851311;
+            --cor--secundaria: #414141;
+            --cor-hover: #5e0d0c;
+            --cor-branco: #fff;
+            --cor-caixa: rgba(255, 255, 255, 0.3);
+            --cor-sombra-1: rgba(0, 0, 0, 0.2);
+            --cor-sombra-2: rgba(0, 0, 0, 0.3);
+            --cor-sombra-3: rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://cdn.pixabay.com/photo/2024/05/12/19/07/ai-generated-8757503_1280.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 3em;
+            color: var(--cor-branco);
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-shadow: 0 2px 5px var(--cor-sombra-3);
+        }
+
+        .conteudo {
+            background-color: var(--cor-caixa);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 5px 15px var(--cor-sombra-2);
+            width: 450px;
+            text-align: center;
+            margin: 100px;
+        }
+
+        .caixa__interno {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        @keyframes mudarCor {
+            0% {
+                color: #bd2f2c;
+            }
+
+            50% {
+                color: #cf4e4c;
+            }
+
+            100% {
+                color: #851311;
+            }
+        }
+
+        .btn {
+            background-color: var(--cor-hover);
+            border: none;
+            color: var(--cor-branco);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 8px;
+            cursor: pointer;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px var(--cor-sombra-1);
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--cor-principal);
+            transform: translateY(-2px);
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .aviso-gigante {
+            font-size: 3em;
+            color: var(--cor-branco);
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-shadow: 0 2px 5px var(--cor-sombra-3);
+            animation: mudarCor 1s infinite;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="conteudo">
+        <h2>Aceita namorar comigo?</h2>
+        <div class="caixa__interno">
+            <button class="btn" onclick="sim()">SIM</button> <!--style="position: fixed;display: block;"-->
+            <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)">NÃO</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    let cont = document.querySelector('.conteudo')
+
+    function close() {
+        let bt = document.querySelectorAll('button.btn')
+        for (let i = 0; i < bt.length; i++) {
+            bt[i].style.opacity = 0;
+            bt[i].style.display = 'none';
+        }
+        let rh2 = document.querySelector('.conteudo h2')
+        rh2.parentNode.removeChild(rh2)
+    }
+
+    function sim() {
+        if (true) {
+            document.querySelector('h2').style.display = "none"
+            let h1 = document.createElement('h1')
+            h1.classList.add('aviso-gigante')
+            h1.innerHTML = 'Você</br>aceitou!</br>🥰'
+            cont.appendChild(h1)
+            setTimeout(() => {
+                // location.href = "https://music.youtube.com/watch?v=izGwDsrQ1eQ";
+                location.href = "https://www.youtube.com/watch?v=izGwDsrQ1eQ"
+            }, 2000)
+            close()
+        }
+    }
+
+    function desvia(btn) {
+        btn.style.position = 'absolute';
+        btn.style.bottom = geraPosicao(10, 90);
+        btn.style.left = geraPosicao(10, 90);
+        console.log('opa, desviei...');
+    }
+
+    function geraPosicao(min, max) {
+        return (Math.random() * (max - min) + min) + "%";
+    }
+
+</script>
+
+</html>
