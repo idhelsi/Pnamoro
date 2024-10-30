@@ -14,7 +14,7 @@
             --cor--secundaria: #414141;
             --cor-hover: #5e0d0c;
             --cor-branco: #fff;
-            --cor-caixa: rgba(255, 70, 70, 0.3);
+            --cor-caixa: rgba(255, 255, 255, 0.3);
             --cor-sombra-1: rgba(0, 0, 0, 0.2);
             --cor-sombra-2: rgba(0, 0, 0, 0.3);
             --cor-sombra-3: rgba(0, 0, 0, 0.5);
@@ -25,16 +25,18 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        /* https://cdn.pixabay.com/photo/2022/12/30/02/53/heart-7686126_1280.png */
         body {
             font-family: 'Poppins', sans-serif;
-            background-image: url('https://cdn.pixabay.com/photo/2022/12/30/02/53/heart-7686126_1280.png');
+            background-image: url('https://cdn.pixabay.com/photo/2017/09/04/09/28/heart-2713321_1280.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            background-position: center;
         }
 
         h2 {
@@ -117,7 +119,7 @@
     <div class="conteudo">
         <h2>Aceita namorar comigo?</h2>
         <div class="caixa__interno">
-            <button class="btn" onclick="sim()">SIM</button> <!--style="position: fixed;display: block;"-->
+            <button  class="btn" onclick="sim()">SIM</button> <!--style="position: fixed;display: block;"-->
             <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)">NÃO</button>
         </div>
     </div>
