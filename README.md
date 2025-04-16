@@ -14,7 +14,7 @@ Este projeto é uma página HTML interativa que propõe de forma divertida um pe
 - JavaScript
 
 ## Como Usar
-1. Abra o arquivo `Oi.html` em um navegador.
+1. Abra o arquivo `index.html` em um navegador.
 2. Clique no botão "SIM" ou "NÃO" para interagir.
 
 ## Contribuições
